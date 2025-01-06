@@ -1,0 +1,8 @@
+.container {
+  width: 80%;
+  background-color: rgb(53, 128, 241);
+}
+
+.navigation {
+  display: flex;
+}
