@@ -6,6 +6,30 @@
   border: 0px;
 }
 
+.a {
+  text-decoration: none;
+}
+/* unvisited link */
+a:link {
+  color: red;
+  display: inline-block;
+}
+
+/* visited link */
+/* a:visited {
+  color: green;
+  display: inline-block;
+} */
+
+/* mouse over link */
+a:hover {
+  background-color: red;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
 .navigation {
   display: flex;
   justify-content: flex-end;
@@ -45,6 +69,8 @@ li {
   text-align: center;
   font-size: 50px;
   color: rgb(35, 108, 241);
+  text-shadow: 2px 2px blue;
+  /* text-shadow: 2px 2px blue, 0 0 5px yellow; */
 
   padding: 10px;
 }
@@ -58,9 +84,40 @@ li {
   justify-content: center;
 }
 .sidebar {
+  display: flex;
+  flex-direction: column;
   width: 15%;
+}
+.rSider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  border: 2px solid blue;
+  /* background-color: darkcyan; */
+}
+.lNav {
   background-color: darkcyan;
+}
+.form {
+  align-items: justify;
 }
 .side {
   display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: blue;
+  width: 120px;
+  align-items: center;
+}
+
+.email {
+  margin-left: 25px;
+}
+
+.pic {
+  display: flex;
+  justify-content: space-between;
 }
