@@ -36,9 +36,12 @@ li {
   width: 100%;
   bottom: 0px;
 }
+.logo {
+  margin-right: 100px;
+}
 .head {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   text-align: center;
   font-size: 50px;
   color: rgb(35, 108, 241);
