@@ -101,6 +101,16 @@ li {
   /* border: 1px solid black; */
   overflow: auto;
 }
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .rSider {
   display: flex;
   flex-direction: column;
