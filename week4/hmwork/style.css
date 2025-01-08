@@ -1,6 +1,6 @@
 .container {
   background-image: url(images/back_ground1.jpg);
-  height: 765px;
+  /* height: 765px; */
   /* opacity: 0.6; */
   position: relative;
   border: 0px;
@@ -55,7 +55,7 @@ li {
   padding-right: 10px;
 }
 .footer {
-  position: absolute;
+  position: sticky;
   background-color: black;
   height: 120px;
   width: 100%;
@@ -91,6 +91,14 @@ li {
   display: flex;
   flex-direction: column;
   width: 15%;
+}
+.toDo {
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 2px;
+  color: rgb(28, 17, 78);
+  background-color: rgb(60, 133, 243);
+  border-right: 10px solid darkcyan;
 }
 .signUp {
   display: flex;
@@ -148,13 +156,19 @@ button {
 }
 
 .pic {
+  padding-top: 20px;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  width: 125px;
+  justify-content: center;
+  /* align-items: flex-end; */
+  /* bottom: 0px; */
+  /* width: 125px; */
   /* margin: auto; */
   /* border: 3px solid #302ceb; */
 }
 
 img {
+  margin-right: 15px;
   border: 3px solid #302ceb;
+  border-bottom: 40px solid blue;
 }
