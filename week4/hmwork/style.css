@@ -96,6 +96,10 @@ li {
   border: 2px solid blue;
   /* background-color: darkcyan; */
 }
+.content {
+  border: 2px solid blue;
+  width: 60%;
+}
 .lNav {
   background-color: darkcyan;
 }
@@ -117,7 +121,14 @@ button {
   margin-left: 25px;
 }
 
-.pic {
+div.pic {
   display: flex;
   justify-content: space-between;
+  width: 125px;
+  /* margin: auto; */
+  /* border: 3px solid #302ceb; */
+}
+
+image {
+  border: 3px solid #302ceb;
 }
