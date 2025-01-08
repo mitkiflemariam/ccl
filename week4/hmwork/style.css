@@ -55,8 +55,12 @@ li {
   padding-right: 10px;
 }
 .footer {
+  display: flex;
   position: sticky;
   background-color: black;
+  color: white;
+  justify-content: space-around;
+  align-items: flex-end;
   height: 120px;
   width: 100%;
   bottom: 0px;
@@ -73,7 +77,7 @@ li {
   color: rgb(35, 108, 241);
   text-shadow: 2px 2px blue;
   /* text-shadow: 2px 2px blue, 0 0 5px yellow; */
-
+  /* border: 2px solid #302ceb; */
   padding: 10px;
 }
 .header {
@@ -130,6 +134,9 @@ table {
 .content {
   border: 2px solid blue;
   width: 60%;
+  padding-left: 15px;
+  /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+  font-size: 27px;
 }
 .lNav {
   background-color: darkcyan;
@@ -156,7 +163,7 @@ button {
 }
 
 .pic {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -166,9 +173,16 @@ button {
   /* margin: auto; */
   /* border: 3px solid #302ceb; */
 }
-
+/* .login_logout {
+  float: right;
+} */
 img {
   margin-right: 15px;
   border: 3px solid #302ceb;
   border-bottom: 40px solid blue;
+}
+
+img.story {
+  float: left;
+  border: none;
 }
