@@ -105,7 +105,8 @@ li {
   border-right: 10px solid darkcyan;
 }
 .signUp {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   padding-top: 0px;
   align-items: center;
@@ -122,6 +123,10 @@ th {
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.buttonDelete {
+  background-color: red;
 }
 .rSider {
   display: flex;
@@ -162,6 +167,14 @@ button {
   margin-left: 5px;
 }
 
+.completedTask {
+  text-decoration-line: line-through;
+  text-decoration-color: red;
+}
+
+.td {
+  border: none;
+}
 .pic {
   /* padding-top: 20px; */
   position: relative;
