@@ -23,8 +23,8 @@ tb.addEventListener("click", function (event) {
       if (
         clickedRow.cells[0].textContent === element.inputValue &&
         clickedRow.cells[1].textContent === element.created_date &&
-        clickedRow.cells[2].textContent === element.dueValue &&
-        clickedRow.cells[4].querySelector(".buttonEdit").textContent === "!"
+        clickedRow.cells[2].textContent === element.dueValue
+        // clickedRow.cells[4].querySelector(".buttonEdit").textContent === "!"
       ) {
         element.done = true;
       }
@@ -160,3 +160,17 @@ function EditRow(btn) {
   }
   localStorage.setItem("toDos", JSON.stringify(storage));
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleLink = document.querySelector(".hide-form");
+  const signUpForm = document.querySelector(".signUp");
+
+  toggleLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default link action
+    if (signUpForm.style.display === "none" || !signUpForm.style.display) {
+      signUpForm.style.display = "flex";
+    } else {
+      signUpForm.style.display = "none";
+    }
+  });
+});
