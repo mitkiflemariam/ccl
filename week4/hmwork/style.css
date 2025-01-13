@@ -105,8 +105,8 @@ li {
   border-right: 10px solid darkcyan;
 }
 .signUp {
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
   flex-direction: column;
   padding-top: 0px;
   align-items: center;
@@ -127,6 +127,9 @@ table {
 
 .buttonDelete {
   background-color: red;
+}
+.buttonEdit {
+  background-color: green;
 }
 .rSider {
   display: flex;

@@ -16,18 +16,21 @@ tb.addEventListener("click", function (event) {
 
     clickedRow.style.textDecorationLine = "line-through";
     clickedRow.style.textDecorationColor = "red";
-
+    console.log(
+      clickedRow.cells[4].querySelector(".buttonEdit").textContent === "!"
+    );
     storage.forEach((element) => {
       if (
         clickedRow.cells[0].textContent === element.inputValue &&
         clickedRow.cells[1].textContent === element.created_date &&
-        clickedRow.cells[2].textContent === element.dueValue
+        clickedRow.cells[2].textContent === element.dueValue &&
+        clickedRow.cells[4].querySelector(".buttonEdit").textContent === "!"
       ) {
         element.done = true;
       }
     });
     localStorage.setItem("toDos", JSON.stringify(storage));
-    console.log(storage);
+    // console.log(storage);
   }
 });
 btn.addEventListener("click", function () {
@@ -83,7 +86,8 @@ function loadRow(inputValue, created_date, dueValue, done) {
         <td>${inputValue}</td>
         <td>${created_date}</td>
         <td>${dueValue}</td>
-        <td class="td"><input type="button" id="buttonDelete" value="-" onclick="deleteRow(this)" /></td>
+        <td><input type="button"  class="buttonDelete" value="-" onclick="deleteRow(this)" /></td>
+        <td><input type="button" class="buttonEdit" value="!" onclick="EditRow(this)" /></td>
     </tr>`;
 
   let completed = `
@@ -92,6 +96,7 @@ function loadRow(inputValue, created_date, dueValue, done) {
         <td>${created_date}</td>
         <td>${dueValue}</td>
         <td><input type="button" class="buttonDelete" value="-" onclick="deleteRow(this)"></td>
+        <td><input type="button" class="buttonEdit" value="!" onclick="EditRow(this)" /></td>
     </tr>`;
   if (done) {
     tb.innerHTML += completed;
@@ -130,23 +135,28 @@ function deleteRow(btn) {
 
   localStorage.setItem("toDos", JSON.stringify(storage));
 }
+function EditRow(btn) {
+  const row = btn.closest("tr");
+  let storage = JSON.parse(localStorage.getItem("toDos")) || [];
 
-const divElement = document.getElementsByClassName("signUp");
-const hide = document.getElementsByClassName("hide-form");
+  const created_date = row.cells[1].textContent;
 
-function toggleVisibility(selector) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.style.display = element.style.display === "none" ? "flex" : "none";
+  const inputValue = inputElement.value;
+  const dueValue = due.value;
+  if (inputValue && dueValue) {
+    storage.forEach((element) => {
+      if (
+        row.cells[0].textContent === element.inputValue &&
+        row.cells[1].textContent === element.created_date &&
+        row.cells[2].textContent === element.dueValue
+      ) {
+        row.cells[0].textContent = inputValue;
+        element.inputValue = inputValue;
+        row.cells[2].textContent = dueValue;
+        element.dueValue = dueValue;
+        element.done = false;
+      }
+    });
   }
+  localStorage.setItem("toDos", JSON.stringify(storage));
 }
-
-document
-  .querySelector(".hide-form")
-  .addEventListener("click", () => toggleVisibility(".signUp"));
-
-// document
-//   .querySelectorAll(".hide-form")
-//   .forEach((button) =>
-//     button.addEventListener("click", () => toggleVisibility(".signUp"))
-//   );
