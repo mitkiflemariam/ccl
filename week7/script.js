@@ -8,7 +8,7 @@ let items = [];
 // Function to calculate total quantity
 function total_quantity(items) {
   return items.length > 0
-    ? items.map((item) => item.quantity).reduce((x, y) => x + y, 0)
+    ? items.map((item) => item.quantity_val).reduce((x, y) => x + y, 0)
     : 0;
 }
 
@@ -49,9 +49,9 @@ document.getElementById("add_btn").addEventListener("click", function () {
   tabl.appendChild(row);
 
   items.push({
-    item_name: item_name_val,
-    quantity: Number(quantity_val),
-    price: parseFloat(price_val),
+    item_name_val: item_name_val,
+    quantity_val: Number(quantity_val),
+    price_val: parseFloat(price_val),
     toal_price: toal_price,
   });
   //   total_quantity(items);
@@ -65,7 +65,7 @@ document.getElementById("add_btn").addEventListener("click", function () {
 function deleteRow(btn) {
   const row = btn.closest("tr");
 
-  const inpuitem_name = row.cells[0].textContent;
+  const item_name = row.cells[0].textContent;
   const quantity = row.cells[1].textContent;
   const price = row.cells[2].textContent;
   const toal_price = row.cells[3].textContent;
@@ -74,12 +74,12 @@ function deleteRow(btn) {
 
   items = items.filter(
     (data) =>
-      data.inpuitem_name !== inpuitem_name ||
-      data.quantity !== quantity ||
-      data.price !== price ||
-      data.toal_price !== toal_price
+      data.item_name_val !== item_name ||
+      data.quantity_val !== Number(quantity) ||
+      data.price_val !== parseFloat(price) ||
+      data.toal_price !== parseFloat(toal_price)
   );
   //   total_quantity(items);
-  updateTotalQuantity();
+  // updateTotalQuantity();
 }
 updateTotalQuantity();

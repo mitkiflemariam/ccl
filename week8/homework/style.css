@@ -1,0 +1,39 @@
+.body {
+  font-family: Courier, sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  background-color: black;
+}
+
+.card {
+  background-color: black;
+  margin: 5px;
+}
+#container {
+  /* height: 100vh; */
+  background-color: black;
+
+  /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+.card-body {
+  /* border: 2px solid blue; */
+  margin: 2px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  max-width: 400px;
+  padding-top: 0px;
+}
+
+.title {
+  padding-top: 16px;
+}
+
+.movie_img_rounded {
+  border-radius: 3rem;
+  background-color: black;
+}
